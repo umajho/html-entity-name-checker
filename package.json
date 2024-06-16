@@ -9,6 +9,7 @@
     "src/**/*.js",
     "generated/**/*.js"
   ],
+  "main": "mod.js",
   "module": "mod.js",
   "types": "mod.d.ts",
   "repository": {
