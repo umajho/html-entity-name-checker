@@ -1,0 +1,26 @@
+{
+  "name": "html-entity-name-checker",
+  "version": "0.1.0",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "mod.js",
+    "mod.d.ts",
+    "src/**/*.js",
+    "generated/**/*.js"
+  ],
+  "module": "mod.js",
+  "types": "mod.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umajho/html-entity-name-checker"
+  },
+  "author": "Umaĵo",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "npm run generate-html-entity-trie-strict",
+    "generate-html-entity-trie-strict": "mkdir -p generated && scripts/serialize-trie.js < raw-data/html-entities-strict.txt > generated/html-entity-trie-strict.txt && scripts/to-js-default-export.js < generated/html-entity-trie-strict.txt > generated/html-entity-trie-strict.js",
+    "pretest": "npm run prepare",
+    "test": "node --test tests/"
+  }
+}
