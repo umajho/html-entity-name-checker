@@ -1,6 +1,6 @@
 {
   "name": "html-entity-name-checker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "sideEffects": false,
   "files": [
@@ -18,9 +18,9 @@
   "author": "Umaĵo",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run generate-html-entity-trie-strict",
     "generate-html-entity-trie-strict": "mkdir -p generated && scripts/serialize-trie.js < raw-data/html-entities-strict.txt > generated/html-entity-trie-strict.txt && scripts/to-js-default-export.js < generated/html-entity-trie-strict.txt > generated/html-entity-trie-strict.js",
-    "pretest": "npm run prepare",
+    "prepublish": "npm run generate-html-entity-trie-strict",
+    "pretest": "npm run generate-html-entity-trie-strict",
     "test": "node --test tests/"
   }
 }
